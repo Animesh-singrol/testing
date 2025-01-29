@@ -37,33 +37,33 @@ function PatientList() {
   };
 
   return (
-    <div className="relative min-h-screen p-8 bg-[var(--primary-color)]">
+    <div className="relative min-h-screen p-8">
       {/* Header Section */}
       <div className="flex items-center mb-8 pt-24 ml-10">
         <div className="text-left">
-          <h1 className="text-2xl font-semibold text-[var(--text-color)]">Hello</h1>
-          <p className="text-4xl font-semibold capitalize text-[var(--text-color)]">{name}</p>
+          <h1 className="text-2xl font-semibold">Hello</h1>
+          <p className="text-4xl font-semibold capitalize">{name}</p>
         </div>
       </div>
 
       {/* Patient List Section */}
-      <div className="bg-white p-4 border border-[var(--grey-border)] rounded-lg mb-8 max-h-144 overflow-auto bg-[var(--background-color)]">
-        <h2 className="text-xl font-semibold mb-4 text-[var(--text-color)]">Patient List</h2>
+      <div className="bg-white p-4 border border-gray-300 rounded-lg mb-8 max-h-144 overflow-auto">
+        <h2 className="text-xl font-semibold mb-4">Patient List</h2>
         <div className="space-y-4">
           {patient?.map((patient) => (
             <div
               key={patient?.patientId}
-              className="flex justify-between items-center p-4 bg-[var(--tablebackground)] rounded-lg cursor-pointer hover:bg-primary/10 transition"
+              className="flex justify-between items-center p-4 bg-gray-100 rounded-lg cursor-pointer hover:bg-primary/10 transition"
               onClick={() => handlePatientClick(patient?.patientId)}
             >
               <div className="flex flex-col">
-                <p className="text-lg font-medium capitalize text-[var(--text-color)]">Name: {patient?.name}</p>
-                <p className="text-sm text-[var(--text-color)]">
+                <p className="text-lg font-medium capitalize">Name: {patient?.name}</p>
+                <p className="text-sm text-gray-600">
                   Patient ID: {patient.patientId}
                 </p>
                 {/* <p className="text-sm text-gray-600">Age: {patient?.Age}</p> */}
               </div>
-              <p className="text-sm text-[var(--text-color)]">
+              <p className="text-sm text-gray-500">
                 Date: {new Date(patient?.createdAt).toLocaleDateString()}
               </p>
             </div>

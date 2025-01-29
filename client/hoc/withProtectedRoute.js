@@ -9,7 +9,9 @@ const withProtectedRoute = (WrappedComponent) => {
     const router = useRouter();
 
     // Select authentication state and loading state from Redux
-    const isAuthenticated = useSelector((state) => state?.user?.isAuthenticated);
+    const isAuthenticated = useSelector(
+      (state) => state?.user?.isAuthenticated
+    );
     const isLoading = useSelector((state) => state?.user?.isLoading);
 
     // Local state to handle delay before rendering or redirecting
@@ -32,7 +34,12 @@ const withProtectedRoute = (WrappedComponent) => {
 
     // Show a loading screen during the delay
     if (!isReady && (isLoading || !isAuthenticated)) {
-      return <div>Loading...</div>; // Optional: Replace with a spinner or skeleton
+      return (
+        <div className="flex flex-col items-center justify-center space-y-2 h-screen">
+          {/* Spinner */}
+          <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      ); // Optional: Replace with a spinner or skeleton
     }
 
     return <WrappedComponent {...props} />;

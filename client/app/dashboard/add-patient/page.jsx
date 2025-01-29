@@ -90,16 +90,16 @@ const AddPatientForm = () => {
       }}
       className="overflow-hidden flex flex-col justify-center items-center min-h-screen"
     >
-      <div className="w-full md:w-4/5 lg:w-2/3 xl:w-1/2 h-full flex flex-col items-center justify-center md:flex-row gap-16 mt-10 border border-black">
+      <div className="w-full md:w-4/5 lg:w-2/3 xl:w-1/2 h-full flex flex-col items-center justify-center md:flex-row gap-16 mt-10">
         {/* Left Section */}
         <div className="w-1/3 flex items-center justify-center">
-          <h2 className="text-5xl font-extrabold text-[var(--text-color)] text-nowrap">
+          <h2 className="text-5xl font-extrabold text-black text-nowrap">
             New Patient?
           </h2>
         </div>
 
         {/* Right Section */}
-        <div className="w-2/3 md:w-full p-8 rounded-lg bg-[var(--addPatientColor)] shadow-md bg-opacity-60 border border-gray-500">
+        <div className="w-2/3 md:w-full p-8 rounded-lg bg-gray-600 shadow-md bg-opacity-60 border border-gray-500">
           {/* Form Fields */}
           <form onSubmit={formik.handleSubmit}>
             {/* Name Field */}
@@ -111,7 +111,7 @@ const AddPatientForm = () => {
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 placeholder="Name"
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[var(--grey-border)] border-[var(--grey-border)] placeholder:text-[var(--placeholder)]"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               {formik.touched.Name && formik.errors.Name && (
                 <p className="text-red-700 text-sm mt-2">
@@ -143,7 +143,7 @@ const AddPatientForm = () => {
                 value={formik.values.Gender}
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/70 bg-[var(--grey-border)] border-[var(--grey-border)] placeholder:text-[var(--placeholder)]"
+                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/70"
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -190,7 +190,7 @@ const AddPatientForm = () => {
                 onBlur={formik.handleBlur}
                 placeholderText="Select Date of Birth"
                 dateFormat="dd-MM-yyyy" // Displayed format
-                className="w-128 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-[var(--placeholder)] bg-[var(--grey-border)] border-[var(--grey-border)]"
+                className="w-128 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               {formik.touched.dateOfBirth && formik.errors.dateOfBirth && (
                 <p className="text-red-700 text-sm mt-2">
@@ -212,7 +212,6 @@ const AddPatientForm = () => {
                 }
                 onBlur={() => formik.setFieldTouched("City", true)}
                 styles={customStyles}
-                className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/70 bg-[var(--grey-border)] border-[var(--grey-border)] placeholder:text-[var(--placeholder)"
               />
               {formik.touched.City && formik.errors.City && (
                 <p className="text-red-700 text-sm mt-2">

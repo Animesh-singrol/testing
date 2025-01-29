@@ -77,12 +77,12 @@ function PatientReports() {
   };
 
   return (
-    <div className="min-h-screen p-8 bg-[var(--background-color)] text-[var(--text-color)">
+    <div className="min-h-screen p-8">
       {/* Header Section */}
       <div className="flex items-center mb-8 pt-24 md:ml-10 md:justify-between justify-center">
         <div className="text-center md:text-left items-center flex-col justify-center">
-          <h1 className="text-2xl font-semibold text-[var(--text-color)]">Hello</h1>
-          <p className="text-4xl font-semibold capitalize text-[var(--text-color)]">{name}</p>
+          <h1 className="text-2xl font-semibold">Hello</h1>
+          <p className="text-4xl font-semibold capitalize">{name}</p>
         </div>
       </div>
 
@@ -128,22 +128,22 @@ function PatientReports() {
             patientReport?.patientReports[0]?.reports.map((report) => (
               <div
                 key={report.reportId}
-                className="flex items-center justify-between p-4 bg-[var(--tablebackground)] rounded-lg hover:bg-[var(--sidebar-text-color)] transition"
+                className="flex items-center justify-between p-4 bg-gray-100 rounded-lg hover:bg-gray-200 transition"
               >
                 <div>
-                  <p className="text-lg font-medium text-[var(--text-color)]">
-                    <span className="font-bold text-[var(--text-color)]">Report ID:</span>{" "}
+                  <p className="text-lg font-medium">
+                    <span className="font-bold">Report ID:</span>{" "}
                     {report.reportId}
                   </p>
-                  <p className="text-sm text-[var(--text-color)]">
-                    <span className="font-bold text-[var(--text-color)]">Created At:</span>{" "}
+                  <p className="text-sm text-gray-600">
+                    <span className="font-bold">Created At:</span>{" "}
                     {new Date(report.createdAt).toLocaleString()}
                   </p>
                 </div>
 
                 <div className="flex space-x-4">
                   {/* Expand icon to preview PDF */}
-                  <button
+                  {/* <button
                     onClick={() =>
                       handlePreviewClick(`${report.reportUrl}`)
                     }
@@ -155,7 +155,7 @@ function PatientReports() {
                       alt="Preview"
                       className="w-8 h-8"
                     />
-                  </button>
+                  </button> */}
 
                   {/* Download button */}
                   <button

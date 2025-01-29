@@ -6,13 +6,17 @@ import { ToastContainer } from "react-toastify";
 import "./globals.css"; // Import global styles
 import "react-datepicker/dist/react-datepicker.css";
 import Head from "next/head";
+
+
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
         <title>Diabetic Retinopathy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/merai_fevicon.png" />
+        <link rel="icon" href="/merai_fevicon.ico"/>
       </Head>
 
       <body>

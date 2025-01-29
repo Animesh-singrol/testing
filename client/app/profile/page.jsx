@@ -79,11 +79,11 @@ const UpdateProfile = () => {
         backgroundImage: `url(${BackgroundImage.src})`,
         backgroundSize: "cover",
       }}
-      className="h-screen overflow-hidden flex flex-col bg-[var(--primary-color)]"
+      className="h-screen overflow-hidden flex flex-col"
     >
       <main className="flex flex-1 flex-col items-center justify-center p-6">
         {/* Main Heading */}
-        <h1 className="text-4xl font-bold mb-8 text-[var(--text-color)] drop-shadow-lg">
+        <h1 className="text-4xl font-bold mb-8 text-gray-800 drop-shadow-lg">
           Update Profile
         </h1>
 
@@ -94,7 +94,7 @@ const UpdateProfile = () => {
         >
           {/* Name Field */}
           <div className="w-full max-w-sm">
-            <label htmlFor="name" className="text-xl text-[var(--text-color)]">
+            <label htmlFor="name" className="text-xl">
               Name
             </label>
             <input
@@ -104,7 +104,7 @@ const UpdateProfile = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               placeholder="Enter your name"
-              className="w-full px-4 py-4 mt-3 border rounded-md bg-white shadow-md border-primary/90 focus:ring-primary/70 focus:outline-none focus:ring-2 bg-[var(--grey-border)] placeholder:text-[var(--placeholder)]"
+              className="w-full px-4 py-4 mt-3 border rounded-md bg-white shadow-md border-primary/90 focus:ring-primary/70 focus:outline-none focus:ring-2"
             />
             {formik.touched.name && formik.errors.name && (
               <p className="text-red-700 text-sm">{formik.errors.name}</p>
@@ -113,7 +113,7 @@ const UpdateProfile = () => {
 
           {/* Email Field */}
           <div className="w-full max-w-sm">
-            <label htmlFor="email" className="text-xl text-[var(--text-color)]">
+            <label htmlFor="email" className="text-xl">
               Email
             </label>
             <input
