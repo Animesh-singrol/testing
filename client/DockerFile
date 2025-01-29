@@ -1,0 +1,18 @@
+# Use a newer version of Node.js (e.g., Node 18 or above)
+FROM node:22
+ 
+# Set working directory
+WORKDIR /app
+ 
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install
+ 
+# Copy the rest of the app
+COPY . .
+ 
+# Expose the frontend port
+EXPOSE 3000
+ 
+# Start the Vite development server
+CMD [ "npm", "run","dev"]

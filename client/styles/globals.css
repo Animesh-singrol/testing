@@ -1,0 +1,47 @@
+/* Import Tailwind's base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom Global Styles */
+@layer base{
+  :root {
+    --primary-color: #008181;
+    --primary-color-hover: #006c6c;
+    --sidebar-text-color: white;
+    --background-color: white;
+    --text-color: black;
+    --sidebar: #008181;
+    --placeholder: #B5B5B5;
+    --tablebackground:#F7FAFC;
+    
+  }
+
+  /* Define Dark Mode Colors */
+  .dark {
+    --primary-color: #1a202c;
+    --primary-color-hover: #004848;
+    --sidebar-text-color: #B5B5B5;
+    --background-color: #1a202c;
+    --text-color: white;
+    --sidebar: #1a202c;
+    --placeholder: white;
+    --tablebackground:#2D3748;
+  }
+}
+
+
+/* Custom Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9fafb;
+}
+
+/* Example of custom global styles */
+h1 {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Add any other global styles here */

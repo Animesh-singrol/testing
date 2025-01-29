@@ -1,0 +1,5 @@
+[2024-12-12 13:23:55] ERROR: Error fetching users: connect ECONNREFUSED 127.0.0.1:3306
+[2024-12-12 13:23:55] ERROR: 500 - Internal Server Error: connect ECONNREFUSED 127.0.0.1:3306
+[2024-12-17 11:07:36] ERROR: Unable to connect to the database: connect ECONNREFUSED 127.0.0.1:3306
+[2024-12-17 11:33:58] ERROR: Error creating user: Validation error: Validation isEmail on email failed
+[2024-12-17 11:33:58] ERROR: 500 - Internal Server Error: Validation error: Validation isEmail on email failed

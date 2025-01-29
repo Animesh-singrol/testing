@@ -1,0 +1,58 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server # Correct context for the backend
+      dockerfile: DockerFile # Dockerfile for the backend
+    ports:
+      - "8000:8000" # Expose backend on localhost
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASS=
+      - DB_NAME=test
+    depends_on:
+      - db # Ensure db is up before starting the backend
+    networks:
+      - proxy
+
+  dr-admin:
+    build:
+      context: ../dr_admin # Path to the dr-admin folder
+      dockerfile: Dockerfile # Dockerfile for dr-admin if it's present
+    ports:
+      - "4000:4000" # Expose dr-admin frontend on port 4000
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000/api/admin/ # Pass backend API URL to dr-admin
+    networks:
+      - proxy
+
+  frontend:
+    build:
+      context: ./client # Path to the frontend (Next.js)
+      dockerfile: DockerFile # Dockerfile for the frontend
+    ports:
+      - "3000:3000" # Expose frontend on localhost
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://localhost:8000/api/ # Pass backend API URL to frontend
+    networks:
+      - proxy
+
+  db:
+    image: mysql:8 # Use MySQL 8 image
+    ports:
+      - "3306:3306" # Expose database port
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes" # Allow empty password (you should configure this for production)
+      MYSQL_DATABASE: test # Specify the database name
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    name: proxy # Network to allow communication between services
+
+volumes:
+  merai_db_data:
+    # driver: local # Define volume for persisting MySQL data
